@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Application properties
+**/application.properties
+**/application-*.properties
+
+# Environment files
+.env
+.env.local
