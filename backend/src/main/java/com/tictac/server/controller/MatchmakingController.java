@@ -9,7 +9,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/matchmaking")
-@CrossOrigin(origins = {"http://localhost:5173", "https://your-frontend-url.onrender.com"})
+@CrossOrigin(origins = {"http://localhost:5173", "https://tic-tac-toe-rr32.onrender.com"})
 public class MatchmakingController {
 
     private final MatchmakingService matchmakingService;
