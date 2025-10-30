@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router";
-import "./Leaderboard.css";
+import "./LeaderBoard.css";
 import { API_BASE } from "../config/config.js";
 
 function Leaderboard() {
