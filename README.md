@@ -9,11 +9,11 @@ Players can join lobbies, play against each other live, and see instant board up
 
 - ✅ **Real-time gameplay** powered by WebSockets  
 - ✅ **Server-authoritative architecture** — prevents cheating and ensures sync consistency  
-- ✅ **Interactive lobby system** with unique game IDs  
+- ✅ **Leaderboard tracking** for player stats
+- ✅ **Interactive lobby system** with unique game IDs
+- ✅ **Matchmaking** can handle multiple simultaneous games  
 - ✅ **Responsive UI** designed for mobile-first gameplay  
 - ✅ **Automatic result detection** (win, loss, draw)  
-- ✅ **Leaderboard tracking** for player stats  
-- ✅ **Auto-return to homepage** after game ends  
 - ✅ **Fully deployed** — works end-to-end!
 
 ---
@@ -36,14 +36,15 @@ Use these testIDs, to actually test the game
 - 🔁 WebSocket client for live updates
 
 ### **Backend**
-- ☕ Spring Boot (Java)
-- 🔌 STOMP over WebSocket for real-time messaging
-- 🧮 Game state management on the server
-- 🗃️ In-memory storage for active games and players
+- Spring Boot (Java)
+- STOMP over WebSocket for real-time messaging
+- Game state management on the server
+- In-memory storage for active games and players
+- Neon DB for the user data (persistent)
 
 ### **Deployment**
-- 🌐 Frontend: Render / Netlify  
-- 🔧 Backend: Render / Railway  
+- 🌐 Frontend: Render  
+- 🔧 Backend: Render
 - 🔒 Proper CORS & WebSocket production configuration  
 
 ---
