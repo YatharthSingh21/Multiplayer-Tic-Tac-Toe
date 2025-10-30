@@ -15,7 +15,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")  // allow all routes
-                        .allowedOrigins("http://localhost:5173", "https://your-frontend-url.onrender.com") // your React dev server
+                        .allowedOrigins("http://localhost:5173", "https://tic-tac-toe-rr32.onrender.com") // your React dev server
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
