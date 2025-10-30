@@ -56,15 +56,28 @@ Use these testIDs, to actually test the game
 ```plaintext
 +-----------------------+
 |      React (UI)       |
-|  - Lobby / GameBoard  |
-|  - WebSocket Client   |
+|  - Login / Lobby / GameBoard
+|  - WebSocket (STOMP) Client
+|  - REST API for stats
 +----------↑------------+
            |
-           | STOMP Messages (move/join/updates)
+           | STOMP Messages (join/move/updates)
+           | REST Calls (login/stats)
            ↓
-+-----------------------+
-|   Spring Boot Server  |
-|  - GameSocketController|
-|  - GameService         |
-|  - Server Game State   |
-+-----------------------+
++-------------------------------+
+|       Spring Boot Server      |
+|  - GameSocketController (WebSocket)
+|  - LobbyService / GameService
+|  - REST Controllers (Auth, Stats)
+|  - Maintains Active Game State
++--------------↓----------------+
+               |
+               | JDBC / JPA Queries
+               ↓
++-------------------------------+
+|         Neon PostgreSQL        |
+|  - Player Info / Accounts      |
+|  - Game History / Leaderboard  |
+|  - Persistent Stats            |
++--------------------------------+
+
