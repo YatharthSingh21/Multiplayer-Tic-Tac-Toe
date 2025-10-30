@@ -19,6 +19,7 @@ Players can join lobbies, play against each other live, and see instant board up
 ---
 ---
 ## 🚀 Try Yourself
+url - https://tic-tac-toe-rr32.onrender.com
 
 Use these testIDs, to actually test the game
 - Username - test3000, password - maman
