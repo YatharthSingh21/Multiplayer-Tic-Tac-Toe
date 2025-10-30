@@ -21,9 +21,9 @@ Players can join lobbies, play against each other live, and see instant board up
 ## 🚀 Try Yourself
 
 Use these testIDs, to actually test the game
-Username - test3000, password - maman
-Username - test4000, password - maman
-Username - test3899, password - maman
+- Username - test3000, password - maman
+- Username - test4000, password - maman
+- Username - test3899, password - maman
 ---
 
 ---
