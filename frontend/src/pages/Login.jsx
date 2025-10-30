@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "./Login.css";
+import {API_BASE} from "../config/config.js";
+
 
 function Login() {
   const [mode, setMode] = useState("login");
@@ -27,8 +29,8 @@ function Login() {
 
     const url =
       mode === "login"
-        ? "http://localhost:8080/api/login"
-        : "http://localhost:8080/api/register";
+        ? `${API_BASE}/api/login`
+        : `${API_BASE}/api/register`;
 
     try {
       const res = await fetch(url, {

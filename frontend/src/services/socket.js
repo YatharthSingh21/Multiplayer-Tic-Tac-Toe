@@ -1,4 +1,5 @@
 import { Client } from "@stomp/stompjs";
+import { WS_BASE_URL } from "../config/config";
 
 let stompClient = null;
 let currentGameId = null;
@@ -20,7 +21,7 @@ export const connectWebSocket = (gameId, playerId, onMessage) => {
   currentGameId = gameId;
 
   stompClient = new Client({
-    brokerURL: "ws://localhost:8080/ws",
+    brokerURL: `${WS_BASE_URL}/ws`,
     reconnectDelay: 5000,
     heartbeatIncoming: 4000,
     heartbeatOutgoing: 4000,

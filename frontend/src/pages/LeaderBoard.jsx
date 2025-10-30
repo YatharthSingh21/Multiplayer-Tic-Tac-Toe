@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router";
 import "./Leaderboard.css";
+import { API_BASE } from "../config/config.js";
 
 function Leaderboard() {
   const [players, setPlayers] = useState([]);
@@ -17,7 +18,7 @@ function Leaderboard() {
 
     const fetchLeaderboard = async () => {
       try {
-        const res = await fetch("http://localhost:8080/api/leaderboard");
+        const res = await fetch(`${API_BASE}/api/leaderboard`);
         if (!res.ok) throw new Error("Failed to fetch leaderboard data");
         const data = await res.json();
         setPlayers(data);
@@ -64,11 +65,11 @@ function Leaderboard() {
             ) : (
               players.map((player, index) => (
                 <tr key={player.id}>
-                  <td>{index + 1}</td>
-                  <td>{player.username}</td>
-                  <td>{player.wins}</td>
-                  <td>{player.losses}</td>
-                  <td>{player.draws}</td>
+                  <td data-label="Rank">{index + 1}</td>
+                  <td data-label="Player">{player.username}</td>
+                  <td data-label="Wins">{player.wins}</td>
+                  <td data-label="Losses">{player.losses}</td>
+                  <td data-label="Draws">{player.draws}</td>
                 </tr>
               ))
             )}

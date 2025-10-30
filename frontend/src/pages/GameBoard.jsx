@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { connectWebSocket, sendMove, disconnectWebSocket } from "../services/socket.js";
 import "./GameBoard.css";
+import { WS_BASE_URL, API_BASE } from "../config/config";
 
 const GameBoard = ({ gameId, playerId, player1, player2 }) => {
   const [board, setBoard] = useState("---------");
@@ -17,7 +18,7 @@ const GameBoard = ({ gameId, playerId, player1, player2 }) => {
 
     const fetchInitialState = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/api/matchmaking/game/${gameId}/state`);
+        const response = await fetch(`${API_BASE}/api/matchmaking/game/${gameId}/state`);
         if (response.ok) {
           const state = await response.json();
           console.log("📥 Fetched initial game state:", state);

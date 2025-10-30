@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import { Client } from "@stomp/stompjs";
+import { WS_BASE_URL, API_BASE } from "../config/config";
 
 const Lobby = () => { 
   const [status, setStatus] = useState("Joining lobby...");
@@ -23,7 +24,7 @@ const Lobby = () => {
 
   const connectWebSocket = () => {
     stompClient = new Client({
-      brokerURL: "ws://localhost:8080/ws",
+      brokerURL: `${WS_BASE_URL}/ws`,
       reconnectDelay: 5000,
 
       onConnect: () => {
@@ -77,7 +78,7 @@ const Lobby = () => {
     try {
       console.log("📡 Sending join request for:", storedUsername);
       
-      const response = await axios.post("http://localhost:8080/api/matchmaking/join", {
+      const response = await axios.post(`${API_BASE}/api/matchmaking/join`, {
         username: storedUsername,
       });
 

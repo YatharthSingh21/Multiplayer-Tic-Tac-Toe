@@ -182,3 +182,56 @@
   outline: 2px solid #4CAF50;
   outline-offset: 2px;
 }
+
+@media (max-width: 600px) {
+  .leaderboard-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .leaderboard-table thead,
+  .leaderboard-table tbody,
+  .leaderboard-table th,
+  .leaderboard-table td,
+  .leaderboard-table tr {
+    display: block;
+  }
+  
+  .leaderboard-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .leaderboard-table tr {
+    border: 2px solid #333;
+    margin-bottom: 0.5rem;
+    background: #FFF9C4;
+  }
+  
+  .leaderboard-table td {
+    border: none;
+    border-bottom: 1px solid #333;
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    white-space: normal;
+  }
+  
+  .leaderboard-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    width: 45%;
+    padding-right: 1rem;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    background: #4CAF50;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #333;
+  }
+}
