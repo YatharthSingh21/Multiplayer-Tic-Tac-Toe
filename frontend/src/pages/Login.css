@@ -1,0 +1,193 @@
+/* Login.css */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #4CAF50, #FFEB3B);
+  padding: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.login-container h1 {
+  color: #333;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 15px;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.login-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 3px solid #333;
+  box-shadow: 6px 6px 0 #333;
+  width: 100%;
+  max-width: 350px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Comic Sans MS', cursive;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+}
+
+.login-form input:focus {
+  outline: none;
+  color: #333;
+  background: #FFFF8D;
+  border-color: #4CAF50;
+}
+
+.login-form button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background: #39933c;
+  color: white;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive;
+  transition: all 0.2s;
+}
+
+.login-form input:-webkit-autofill {
+  -webkit-text-fill-color: #000000 !important;
+  font-weight: bold !important;
+}
+
+.login-form input::placeholder {
+  color: #666666;
+}
+
+.login-form button[type="submit"]:hover {
+  background: #2e6630;
+  transform: translateY(-2px);
+}
+
+.login-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.error-text {
+  color: #D32F2F;
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: bold;
+  background: #FFEBEE;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 2px solid #D32F2F;
+}
+
+.signup-text {
+  text-align: center;
+  color: #333;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  background: white;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 2px solid #333;
+}
+
+.switch-btn {
+  background: #FFEB3B;
+  border: 2px solid #333;
+  color: #333;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Comic Sans MS', cursive;
+  margin-left: 0.5rem;
+  transition: all 0.2s;
+}
+
+.switch-btn:hover {
+  background: #FFD54F;
+  transform: scale(1.05);
+}
+
+/* Simple X O decorations */
+.xo-decoration {
+  font-size: 2rem;
+  margin: 0 0.5rem;
+  opacity: 0.7;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+  }
+  
+  .login-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .login-form {
+    padding: 1.5rem;
+    margin: 0 10px;
+  }
+  
+  .login-form input {
+    padding: 0.7rem;
+  }
+  
+  .login-form button[type="submit"] {
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container h1 {
+    font-size: 1.6rem;
+    padding: 0.6rem 1rem;
+  }
+  
+  .login-form {
+    padding: 1.2rem;
+  }
+  
+  .signup-text {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
+/* Simple animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.login-container h1 {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Focus styles for accessibility */
+.login-form input:focus,
+.login-form button[type="submit"]:focus,
+.switch-btn:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+}

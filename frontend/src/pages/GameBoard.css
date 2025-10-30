@@ -1,0 +1,158 @@
+/* GameBoard.css */
+
+.gameboard-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #4CAF50, #FFEB3B);
+  padding: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameboard-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.gameboard-header h1 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.xo-decorations {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.xo-decorations span {
+  font-size: 2rem;
+  opacity: 0.8;
+}
+
+.game-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.game-info p {
+  margin: 0.5rem 0;
+  color: #000000;
+  font-size: 1.1rem;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 8px;
+  background: #333;
+  padding: 8px;
+  border-radius: 12px;
+  border: 3px solid #333;
+  box-shadow: 6px 6px 0 #333;
+}
+
+.grid-cell {
+  width: 100px;
+  height: 100px;
+  background: #FFF9C4;
+  border: 2px solid #333;
+  border-radius: 8px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive;
+  transition: all 0.2s;
+  color: #000000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-cell:hover {
+  background: #FFFF8D;
+  transform: scale(1.05);
+}
+
+.grid-cell:active {
+  transform: scale(0.95);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .gameboard-container {
+    padding: 15px;
+  }
+  
+  .gameboard-header h1 {
+    font-size: 2rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .game-info {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .board-grid {
+    grid-template-columns: repeat(3, 80px);
+  }
+  
+  .grid-cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gameboard-header h1 {
+    font-size: 1.7rem;
+    padding: 0.7rem 1.2rem;
+  }
+  
+  .game-info {
+    padding: 1rem;
+  }
+  
+  .game-info p {
+    font-size: 1rem;
+  }
+  
+  .board-grid {
+    grid-template-columns: repeat(3, 70px);
+  }
+  
+  .grid-cell {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  
+  .xo-decorations span {
+    font-size: 1.5rem;
+  }
+}
+
+/* Simple bounce animation for header */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.gameboard-header h1 {
+  animation: bounce 3s ease-in-out infinite;
+}
